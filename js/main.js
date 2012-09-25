@@ -21,15 +21,18 @@ function onOnline() {
 												};
 	  });
 	  
-	  var token = localStorage['url'];
-	  token = token.match(/=(.*?)&/);
-	  console.log(token[1])
+	  setTimeout(function(){
+		  	var token = localStorage['url'];
+	  		token = token.match(/=(.*?)&/);
+	  		console.log(token[1])
 	  
-	  var url = 'https://graph.facebook.com/me/?access_token='+token[1];
+	  		var url = 'https://graph.facebook.com/me/?access_token='+token[1];
 	  
-	  $.getJSON(url,function(json){
-		  	console.log(json.data);
-		  });
+			$.getJSON(url,function(json){
+				  console.log(json.data);
+				});
+		  }, 1000);
+	  
 	  
 	  /*$('#auth-logoutlink').addEventListener('click', function(){
 		FB.logout();
