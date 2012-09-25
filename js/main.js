@@ -22,6 +22,7 @@ function onOnline() {
 	  });
 	  
 	  var token = localStorage['url'];
+	  token = token.match(/=(.*?)&/);
 	  console.log(token)
 	  
 	  /*$('#auth-logoutlink').addEventListener('click', function(){
