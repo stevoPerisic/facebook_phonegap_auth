@@ -14,11 +14,9 @@ function onOnline() {
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
     														alert('childBrowser has loaded ' + url);
-															var result = url;
-															alert(url);
 															return url;
 														};
-		var tokenInfo = window.plugins.childBrowser.onLocationChange;
+		var tokenInfo = url;
 		window.plugins.childBrowser.onClose = function () {
     											alert('childBrowser has closed');
 												alert(tokenInfo);
