@@ -9,9 +9,9 @@ function getFBstuff(){
 	console.log(token[1])
 	  
 	var url = 'https://graph.facebook.com/me/?access_token='+token[1];
-	  
+	console.log(url);  
 	  $.getJSON(url,function(json){
-			console.log(json.data);
+			console.log(json);
 		  });		
 }
 
