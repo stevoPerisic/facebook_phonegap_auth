@@ -19,6 +19,7 @@ function onOnline() {
 														};
 		window.plugins.childBrowser.onClose = function (result) {
     											alert('childBrowser has closed');
+												alert(result);
 												//var result = this;
 												$('#displayCallback').html(result);
 												};
