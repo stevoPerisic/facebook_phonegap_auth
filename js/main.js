@@ -12,7 +12,10 @@ function getFBstuff(){
 	console.log(url);  
 	  $.getJSON(url,function(json){
 			console.log(json);
-			$('#displayCallback').html(json);
+			$('#name').html(json['first_name']);
+			$('#lastname').html(json['last_name']);
+			$('#username').html(json['username']);
+			$('#city').html(json.location['name']);
 		  });		
 }
 
