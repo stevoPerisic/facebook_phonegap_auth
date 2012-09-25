@@ -12,6 +12,7 @@ function getFBstuff(){
 	console.log(url);  
 	  $.getJSON(url,function(json){
 			console.log(json);
+			$('#displayCallback').html(json);
 		  });		
 }
 
