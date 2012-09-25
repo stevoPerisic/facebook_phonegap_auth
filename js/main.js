@@ -21,7 +21,7 @@ function onOnline() {
 												};
 	  });
 	  
-	  var token = localStorage['url'].split("&");
+	  var token = localStorage['url'];
 	  console.log(token)
 	  
 	  /*$('#auth-logoutlink').addEventListener('click', function(){
