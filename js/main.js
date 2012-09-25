@@ -18,7 +18,7 @@ function onOnline() {
 															alert(url);
 															return url;
 														};
-		var tokenInfo = window.plugins.childBrowser.onLocationChange();
+		var tokenInfo = window.plugins.childBrowser.onLocationChange;
 		window.plugins.childBrowser.onClose = function () {
     											alert('childBrowser has closed');
 												alert(tokenInfo);
