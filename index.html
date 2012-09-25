@@ -13,12 +13,25 @@
 </head>
 <body onLoad="onLoad()">
 <div data-role="page" >
-		<div data-role="content" id="wrapper">
-			<h1>Hello you are in the app!</h1>
-		</div>
+		<div data-role="content" role="main">
+    	<h1>Facebook Client-side Authentication Example</h1>
+      	<div id="auth-status">
+        <div id="auth-loggedout">
+          <a href="#" id="auth-loginlink">Login</a>
+        </div>
+        <div id="auth-loggedin" style="display:none">
+          Hi, <span id="auth-displayname"></span>  
+        (<a href="#" id="auth-logoutlink">logout</a>)
+      	</div>
+    	</div>
+        <div><a href="#" onclick="getUserFriends();">Get friends</a></div>
+        <div style="clear:both; height:50px;"></div>
+        
+ 		<ul class="ui-listview" data-role="listview" data-autodividers="true" data-filter="true" id="user-friends"></ul>
+	</div><!-- /content -->
 		<!--End Wrapper--> 
 </div>
 <!--End data-role page-->
-
+<div id="fb-root"></div>
 </body>
 </html>

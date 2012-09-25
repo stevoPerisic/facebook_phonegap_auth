@@ -1,2 +1,9 @@
 /*Styles*/
 
+#auth-loginlink, #auth-logoutlink{
+	display:block;
+	width:200px;
+	height:44px;
+	background-color:#CCCCCC;
+	color:#333333;	
+}
