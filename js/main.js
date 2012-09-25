@@ -14,12 +14,10 @@ function onOnline() {
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
     														console.log('childBrowser has loaded ' + url);
-															return url;
+															localStorage["url"] = url;
 														};
-		var tokenInfo = url;
 		window.plugins.childBrowser.onClose = function () {
     											alert('childBrowser has closed');
-												console.log(tokenInfo);
 												};
 	  });
 	  
