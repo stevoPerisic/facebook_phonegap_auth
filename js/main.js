@@ -3,6 +3,18 @@ function loaded() {
 	alert('Loaded!');	
 }
 
+function getFBstuff(){
+	var token = localStorage['url'];
+	token = token.match(/=(.*?)&/);
+	console.log(token[1])
+	  
+	var url = 'https://graph.facebook.com/me/?access_token='+token[1];
+	  
+	  $.getJSON(url,function(json){
+			console.log(json.data);
+		  });		
+}
+
 
 function onOnline() {
  	alert('We are online!');
@@ -18,20 +30,9 @@ function onOnline() {
 														};
 		window.plugins.childBrowser.onClose = function () {
     											alert('childBrowser has closed');
+												getFBstuff();
 												};
 	  });
-	  
-	  setTimeout(function(){
-		  	var token = localStorage['url'];
-	  		token = token.match(/=(.*?)&/);
-	  		console.log(token[1])
-	  
-	  		var url = 'https://graph.facebook.com/me/?access_token='+token[1];
-	  
-			$.getJSON(url,function(json){
-				  console.log(json.data);
-				});
-		  }, 1000);
 	  
 	  
 	  /*$('#auth-logoutlink').addEventListener('click', function(){
