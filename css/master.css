@@ -1,9 +1,13 @@
 /*Styles*/
 
-#auth-loginlink, #auth-logoutlink{
+#auth-loginlink, #auth-logoutlink, #get-friends{
 	display:block;
 	width:200px;
 	height:44px;
 	background-color:#CCCCCC;
-	color:#333333;	
+	color:#333333;
+	text-decoration:none;
+	margin:20px;
+	text-align:center;
+	padding-top:12px;	
 }
