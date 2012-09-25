@@ -21,9 +21,12 @@ function onOnline() {
 												};
 	  });
 	  
-	  $('#auth-logoutlink').addEventListener('click', function(){
+	  var token = localStorage['url'].split("&");
+	  console.log(token)
+	  
+	  /*$('#auth-logoutlink').addEventListener('click', function(){
 		FB.logout();
-	  }); 
+	  }); */
  
 }
  
