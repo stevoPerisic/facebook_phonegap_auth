@@ -23,7 +23,7 @@ function onOnline() {
 	  
 	  var token = localStorage['url'];
 	  token = token.match(/=(.*?)&/);
-	  console.log(token)
+	  console.log(token[1])
 	  
 	  /*$('#auth-logoutlink').addEventListener('click', function(){
 		FB.logout();
