@@ -10,18 +10,18 @@ function onOnline() {
 	  // respond to clicks on the login and logout links
 	  $('#auth-loginlink').bind('click', function(){
 		//FB.login();
-		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&redirect_uri=http://www.perisicdesigns.com';
+		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&redirect_uri=http://www.perisicdesigns.com&response_type=token&display=touch';
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
     														alert('childBrowser has loaded ' + url);
-															//var result = this;
-															$('#displayCallback').html(this);
+															var result = url;
+															alert(url);
+															return url;
 														};
-		window.plugins.childBrowser.onClose = function (result) {
+		var tokenInfo = window.plugins.childBrowser.onLocationChange;
+		window.plugins.childBrowser.onClose = function () {
     											alert('childBrowser has closed');
-												alert(result);
-												//var result = this;
-												$('#displayCallback').html(result);
+												alert(tokenInfo);
 												};
 	  });
 	  
