@@ -12,6 +12,16 @@ function onOnline() {
 		//FB.login();
 		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&redirect_uri=http://www.perisicdesigns.com';
 		window.plugins.childBrowser.showWebPage(thisurl);
+		window.plugins.childBrowser.onLocationChange = function (url) {
+    														alert('childBrowser has loaded ' + url);
+															//var result = this;
+															$('#displayCallback').html(this);
+														};
+		window.plugins.childBrowser.onClose = function (result) {
+    											alert('childBrowser has closed');
+												//var result = this;
+												$('#displayCallback').html(result);
+												};
 	  });
 	  
 	  $('#auth-logoutlink').addEventListener('click', function(){
