@@ -13,13 +13,13 @@ function onOnline() {
 		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&redirect_uri=http://www.perisicdesigns.com&response_type=token&display=touch';
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
-    														alert('childBrowser has loaded ' + url);
+    														console.log('childBrowser has loaded ' + url);
 															return url;
 														};
 		var tokenInfo = url;
 		window.plugins.childBrowser.onClose = function () {
     											alert('childBrowser has closed');
-												alert(tokenInfo);
+												console.log(tokenInfo);
 												};
 	  });
 	  
