@@ -8,7 +8,7 @@ function onOnline() {
  	alert('We are online!');
 
 	  // respond to clicks on the login and logout links
-	  $('#auth-loginlink').addEventListener('click', function(){
+	  $('#auth-loginlink').bind('click', function(){
 		//FB.login();
 		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&redirect_uri=http://www.perisicdesigns.com';
 		window.plugins.childBrowser.showWebPage(thisurl);
