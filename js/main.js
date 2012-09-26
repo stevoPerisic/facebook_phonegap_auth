@@ -26,7 +26,8 @@ function onOnline() {
 	  // respond to clicks on the login and logout links
 	  $('#auth-loginlink').bind('click', function(){
 		//FB.login();
-		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=dbad0a661aeda5165e7f72af8e56925b&redirect_uri=http://www.perisicdesigns.com&response_type=token&display=touch';
+		//http://www.facebook.com/dialog/oauth/?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URL&state=YOUR_STATE_VALUE&scope=COMMA_SEPARATED_LIST_OF_PERMISSION_NAMES
+		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&redirect_uri='+window.location+'&response_type=token&display=touch';
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
     														console.log('childBrowser has loaded ' + url);
