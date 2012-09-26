@@ -12,6 +12,7 @@
 
 </head>
 <body onLoad="onLoad()">
+<div id="fb-root"></div>
 <div data-role="page" >
 		<div data-role="content" role="main">
     	<h1>Facebook Client-side Authentication Example</h1>
@@ -19,10 +20,7 @@
         <div id="auth-loggedout">
           <a href="#" id="auth-loginlink">Login</a>
         </div>
-        <div id="auth-loggedin" style="display:none">
-          Hi, <span id="auth-displayname"></span>  
-        (<a href="#" id="auth-logoutlink">logout</a>)
-      	</div>
+        
     	</div>
         
         <div id="displayCallback">
@@ -32,7 +30,5 @@
 	</div>
 		
 </div>
-
-<div id="fb-root"></div>
 </body>
 </html>

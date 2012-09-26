@@ -21,23 +21,29 @@ function getFBstuff(){
 
 
 function onOnline() {
- 		console.info('We are online!');
+ 		alert('We are online!');
+		
+		(function() {
+      		var e = document.createElement('script'); e.async = true;
+          	e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+			alert(e);
+          	$('fb-root').appendChild(e);
+          }());
 
 	  // respond to clicks on the login and logout links
-	  $('#auth-loginlink').bind('click', function(){
+	 // $('#auth-loginlink').bind('click', function(){
 		//FB.login();
-		//http://www.facebook.com/dialog/oauth/?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URL&state=YOUR_STATE_VALUE&scope=COMMA_SEPARATED_LIST_OF_PERMISSION_NAMES
-		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&&redirect_uri=http://www.facebook.com/connect/login_success.html&state=somestatevalue&response_type=token&display=touch';
-		window.plugins.childBrowser.showWebPage(thisurl);
-		window.plugins.childBrowser.onLocationChange = function (url) {
-    														console.log('childBrowser has loaded ' + url);
-															localStorage["url"] = url;
-														};
-		window.plugins.childBrowser.onClose = function () {
-    											console.info('childBrowser has closed');
-												getFBstuff();
-												};
-	  });
+		//var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&&redirect_uri=http://www.facebook.com/connect/login_success.html&state=somestatevalue&response_type=token&display=touch';
+		//window.plugins.childBrowser.showWebPage(thisurl);
+		//window.plugins.childBrowser.onLocationChange = function (url) {
+    	//													console.log('childBrowser has loaded ' + url);
+		//													localStorage["url"] = url;
+		//												};
+		//window.plugins.childBrowser.onClose = function () {
+    	//										console.info('childBrowser has closed');
+		//										getFBstuff();
+	//											};
+	//  });
 	  
 	  
 	  /*$('#auth-logoutlink').addEventListener('click', function(){
@@ -51,7 +57,7 @@ function onOffline() {
 }
 		
 //Used to correct android issue with news and stockprices. 
- function onResume() {
+/* function onResume() {
          var networkState = navigator.network.connection.type;
          if (networkState == Connection.UNKNOWN || networkState == Connection.NONE) {
                  onOffline();
@@ -59,7 +65,7 @@ function onOffline() {
                  onOnline();
          }
 		 
-}
+}*/
 
 function onLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -68,9 +74,9 @@ function onLoad() {
 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
 //IMPORTANT: run your phonegap functions here. 
 function onDeviceReady() {
-   window.plugins.childBrowser.onClose = function () {
+  /* window.plugins.childBrowser.onClose = function () {
 		onResume();
-	};
+	};*/
 	  
    var networkState = navigator.network.connection.type;
    if (networkState == Connection.UNKNOWN || networkState == Connection.NONE) {
