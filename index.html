@@ -14,10 +14,7 @@
     body.not_connected #logout { display: none; }
   </style>
   <script src="phonegap.js"></script>
-  <script src="js/jquery-1.6.4.min.js"></script> 
-</head>
-<body onLoad="onLoad()">
-  <div id="fb-root"></div>
+  <script src="js/jquery-1.6.4.min.js"></script>
   <script>
   
    //Login button click
@@ -34,10 +31,10 @@
   function onLoad() {
 		var networkState = navigator.network.connection.type;
 		 if (networkState == Connection.UNKNOWN || networkState == Connection.NONE) {
-				 onOffline();
+				 alert('no connection');
 				
 		 } else {
-				alert('Hello and welcome There is Internet');
+				alert('Hello and welcome there is Internet');
 				
 				(function() {
 				  var e = document.createElement('script'); e.async = true;
@@ -133,7 +130,11 @@
 					
 	};
 	
-  </script>
+  </script> 
+</head>
+<body onLoad="onLoad()">
+  <div id="fb-root"></div>
+  
    <div id="login">
      <p><button id="loginUser">Login</button></p>
    </div>
