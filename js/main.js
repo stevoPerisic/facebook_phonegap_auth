@@ -22,14 +22,7 @@ function loaded() {
 
 function onOnline() {
  		alert('We are online!');
-		
-		(function() {
-      		var e = document.createElement('script'); e.async = true;
-          	e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-			//alert(e);
-          	$('fb-root').appendChild(e);
-          }());
-		  
+		 
 		$('#auth-loginlink').bind('click', function(){
 			var thisurl = 'http://www.facebook.com'
 			window.plugins.childBrowser.showWebPage(thisurl);
