@@ -13,7 +13,8 @@
     body.not_connected #login { display: block; }
     body.not_connected #logout { display: none; }
   </style>
-  <script type="text/javascript" src="phonegap.js"></script> 
+  <script src="phonegap.js"></script>
+  <script src="js/jquery-1.6.4.min.js"></script> 
 </head>
 <body onLoad="onLoad()">
   <div id="fb-root"></div>
@@ -21,13 +22,13 @@
   
    //Login button click
    function loginUser() {  
-   alert('You are trying to login!');  
-	FB.login(function(response) { }, {scope:'email'});  	
-  };
+   		alert('You are trying to login!');  
+		FB.login(function(response) { }, {scope:'email'});  	
+ 	};
   
-  function logout(){
-	 FB.logout();	  
-  };
+	function logout(){
+		FB.logout();	  
+	};
   
   
   function onLoad() {
@@ -36,6 +37,7 @@
 				 onOffline();
 				
 		 } else {
+				alert('Hello and welcome There is Internet');
 				
 				(function() {
 				  var e = document.createElement('script'); e.async = true;
