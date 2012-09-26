@@ -3,7 +3,7 @@ function loaded() {
 	console.info('Loaded!');	
 }
 
-function getFBstuff(){
+/*function getFBstuff(){
 	var token = localStorage['url'];
 	token = token.match(/=(.*?)&/);
 	console.log(token[1])
@@ -17,7 +17,7 @@ function getFBstuff(){
 			$('#username').html(json['username']);
 			$('#city').html(json.location['name']);
 		  });		
-}
+}*/
 
 
 function onOnline() {
@@ -26,9 +26,31 @@ function onOnline() {
 		(function() {
       		var e = document.createElement('script'); e.async = true;
           	e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-			alert(e);
+			//alert(e);
           	$('fb-root').appendChild(e);
           }());
+		  
+		$('#auth-loginlink').bind('click', function(){
+			var thisurl = 'http://www.facebook.com'
+			window.plugins.childBrowser.showWebPage(thisurl);
+			window.plugins.childBrowser.onLocationChange = function(){
+					FB.init({ appId: '226909127331855', 
+			 			status: true, 
+			  			cookie: true,
+			  			xfbml: true,
+			  			oauth: true});
+					FB.Event.subscribe('auth.statusChange', handleStatusChange);
+				}
+		});
+			
+		function handleStatusChange(response) {
+		 //document.body.className = response.authResponse ? 'connected' : 'not_connected';
+		
+		 if (response) {
+		   alert(response);
+		  // updateUserInfo(response);
+		 }
+	   }
 
 	  // respond to clicks on the login and logout links
 	 // $('#auth-loginlink').bind('click', function(){
