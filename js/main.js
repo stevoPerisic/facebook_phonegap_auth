@@ -21,17 +21,25 @@ function onOnline() {
 		$('#fb-root').css({'height': 20, 'width': '100%'}).html('<p>This is the fb-root</p>');
 		
 	
-			FB.init({ 
-				appId: '226909127331855', 
-				status: true, 
-				cookie: true,
-				xfbml: true,
-				oauth: true
-			});
+		FB.init({ 
+			appId: '401203346613814', 
+			status: true, 
+			cookie: true,
+			xfbml: true,
+			oauth: true
+		});
 		
-			FB.getLoginStatus(function(response){
-				alert(response); 
+		$('#auth-loginlink').bind('click', function(){
+			e.preventDefault();
+			FB.login(function(response) {	
+				if(response){
+						alert(response);
+					}
+					else{
+							alert('no response');
+						}
 			});
+		});	
 		
 	
 };
