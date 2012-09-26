@@ -23,7 +23,7 @@ function loaded() {
 function onOnline() {
  		alert('We are online!');
 		 
-		$('#auth-loginlink').bind('click', function(){
+		/*$('#auth-loginlink').bind('click', function(){
 			var thisurl = 'http://www.facebook.com'
 			window.plugins.childBrowser.showWebPage(thisurl);
 			window.plugins.childBrowser.onLocationChange = function(){
@@ -34,16 +34,9 @@ function onOnline() {
 			  			oauth: true});
 					FB.Event.subscribe('auth.statusChange', handleStatusChange);
 				}
-		});
+		});*/
 			
-		window.plugins.childBrowser.onClose = function handleStatusChange(response) {
-		 //document.body.className = response.authResponse ? 'connected' : 'not_connected';
 		
-		 if (response) {
-		   alert(response);
-		  // updateUserInfo(response);
-		 }
-	   }
 
 	  // respond to clicks on the login and logout links
 	 // $('#auth-loginlink').bind('click', function(){
