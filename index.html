@@ -65,9 +65,15 @@
 				   };
 				   
 				 //Log in  
-				 $('#loginUser').bind('click', function(){loginUser();});
+				 $('#loginUser').bind('click', function(e){
+					 e.prevantDefault();	
+					 loginUser();
+					 });
 				 //Log out
-				 $('#logout').bind('click', function(){logout();});
+				 $('#logout').bind('click', function(e){
+					 e.preventDefault();
+					 logout();
+					 });
 				
 				
 				//User info update
@@ -136,24 +142,24 @@
   <div id="fb-root"></div>
   
    <div id="login">
-     <p><button id="loginUser">Login</button></p>
+     <p><a href="#" id="loginUser"><button >Login</button></a></p>
    </div>
    <div id="logout">
      <div id="user-info"></div>
-     <p><button id="logout">Logout</button></p>
+     <p><a href="#" id="logout"><button>Logout</button></a></p>
    </div>
    
  
   
   <div id="user-info"></div>
 
-  <a href="#" onclick="getUserFriends();">Get friends</a><br>
+  <a href="#" onClick="getUserFriends();">Get friends</a><br />
   <div id="user-friends"></div>
  
  
-  <a href="#" onclick="publishStory();">Publish feed story</a><br>
+  <a href="#" onClick="publishStory();">Publish feed story</a><br />
   
-  <a href="#" onclick="sendRequest();">Send request</a><br>
+  <a href="#" onClick="sendRequest();">Send request</a><br />
   
   <fb:like></fb:like>
 </body>
