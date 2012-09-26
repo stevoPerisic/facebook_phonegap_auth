@@ -1,33 +1,37 @@
-function loaded() {
-	console.info('Loaded!');	
-}
-
-function onOnline() {
- 		alert('We are online!');
-}
- 
-function onOffline() {
- 	alert('There are no internets!')
-}
-
 function onLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
-
 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
 //IMPORTANT: run your phonegap functions here. 
 function onDeviceReady() {
  
    var networkState = navigator.network.connection.type;
    if (networkState == Connection.UNKNOWN || networkState == Connection.NONE) {
-		   onOffline();
+		  alert('There are no internets!');
 		  
    } else {
 		   onOnline();	
    }
-	//check if they have internet connection
-	document.addEventListener("online", onOnline, false);
-	//check if they are offline
-	document.addEventListener("offline", onOffline, false);
-	loaded();
+
 }; //END device ready!!
+
+function onOnline() {
+ 		alert('We are online!');
+		//this to check for fb-root
+		$('#fb-root').css({'height': 20, 'width': '100%'}).html('<p>This is the fb-root</p>');
+		
+		window.phonegap.fbAsyncInit = function() {
+			FB.init({ 
+				appId: '226909127331855', 
+				status: true, 
+				cookie: true,
+				xfbml: true,
+				oauth: true
+			});
+		
+			FB.getLoginStatus(function(response){
+				alert(response); 
+			});
+		
+		};  
+};
