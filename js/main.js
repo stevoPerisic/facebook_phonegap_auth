@@ -1,5 +1,6 @@
 function onLoad() {
-	document.addEventListener("deviceready", onDeviceReady, false);
+	//document.addEventListener("deviceready", onDeviceReady, false);
+	onOnline(); 
 }
 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
 //IMPORTANT: run your phonegap functions here. 
@@ -17,23 +18,14 @@ function onDeviceReady() {
 
 function onOnline() {
  		alert('We are online!');
-		//this to check for fb-root
-		$('#fb-root').css({'height': 20, 'width': '100%'}).html('<p>This is the fb-root</p>');
 		
-	
-		FB.init({ 
-			appId: '401203346613814', 
-			status: true, 
-			cookie: true,
-			xfbml: true,
-			oauth: true
-		});
 		
-		$('#auth-loginlink').bind('click', function(){
+		
+		$('#auth-loginlink').bind('click', function(e){
 			e.preventDefault();
 			FB.login(function(response) {	
 				if(response){
-						alert(response);
+						console.log(response);
 					}
 					else{
 							alert('no response');

@@ -12,7 +12,32 @@
 </head>
 <body onLoad="onLoad()">
 <div id="fb-root">
-<script type="text/javascript" src="https://connect.facebook.net/en_US/all.js" ></script>
+<script>
+	window.fbAsyncInit = function() {
+		  FB.init({ appId: '401203346613814', 
+		  status: true, 
+		  cookie: true,
+		  xfbml: true,
+		  oauth: true});
+	 
+		  FB.Event.subscribe('auth.statusChange', handleStatusChange);	
+		};
+		
+	function handleStatusChange(response) {
+		 document.body.className = response.authResponse ? 'connected' : 'not_connected';
+		
+		 if (response.authResponse) {
+		   console.log(response);
+		   updateUserInfo(response);
+		 }
+	   }
+
+  (function() {
+	var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+		}());
+</script>
 </div>
 <div data-role="page" >
 		<div data-role="content" role="main">
