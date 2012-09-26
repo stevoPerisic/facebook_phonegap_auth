@@ -16,7 +16,7 @@ function onOnline() {
  		alert('We are online!');
 		
 		
-		(function() {
+		/*(function() {
 				  var e = document.createElement('script'); e.async = true;
 					  e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
 					  document.getElementById('fb-root').appendChild(e);
@@ -109,7 +109,7 @@ function onOnline() {
 					}, 
 					function(response) {
 					  console.log('sendRequest response: ', response);
-					});
+					});*/
 }
  
 function onOffline() {
@@ -131,7 +131,7 @@ function onLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
 
-// PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+// PhoneGap is loaded and it is now safe to make calls to PhoneGap methods
 //IMPORTANT: run your phonegap functions here. 
 function onDeviceReady() {
    window.plugins.childBrowser.onClose = function () {
