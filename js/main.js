@@ -26,14 +26,14 @@ function onOnline() {
 		$('#auth-loginlink').bind('click', function(){
 			var thisurl = 'http://www.facebook.com'
 			window.plugins.childBrowser.showWebPage(thisurl);
-			/*window.plugins.childBrowser.onLocationChange = function(){
+			window.plugins.childBrowser.onLocationChange = function(){
 					FB.init({ appId: '226909127331855', 
 			 			status: true, 
 			  			cookie: true,
 			  			xfbml: true,
 			  			oauth: true});
 					FB.Event.subscribe('auth.statusChange', handleStatusChange);
-				}*/
+				}
 		});
 			
 		function handleStatusChange(response) {
