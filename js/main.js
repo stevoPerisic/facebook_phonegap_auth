@@ -20,7 +20,7 @@ function onOnline() {
 		//this to check for fb-root
 		$('#fb-root').css({'height': 20, 'width': '100%'}).html('<p>This is the fb-root</p>');
 		
-		window.fbAsyncInit = function() {
+	
 			FB.init({ 
 				appId: '226909127331855', 
 				status: true, 
@@ -33,5 +33,5 @@ function onOnline() {
 				alert(response); 
 			});
 		
-		};  
+	
 };
