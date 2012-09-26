@@ -36,7 +36,7 @@ function onOnline() {
 				}
 		});
 			
-		function handleStatusChange(response) {
+		window.plugins.childBrowser.onClose = function handleStatusChange(response) {
 		 //document.body.className = response.authResponse ? 'connected' : 'not_connected';
 		
 		 if (response) {
