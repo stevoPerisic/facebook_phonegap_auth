@@ -9,36 +9,9 @@
 <script type="text/javascript" src="childbrowser.js"></script> 
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script> 
 <script type="text/javascript" src="js/main.js" ></script>
+
 </head>
 <body onLoad="onLoad()">
-<div id="fb-root">
-<script>
-	window.fbAsyncInit = function() {
-		  FB.init({ appId: '401203346613814', 
-		  status: true, 
-		  cookie: true,
-		  xfbml: true,
-		  oauth: true});
-	 
-		  FB.Event.subscribe('auth.statusChange', handleStatusChange);	
-		};
-		
-	function handleStatusChange(response) {
-		 document.body.className = response.authResponse ? 'connected' : 'not_connected';
-		
-		 if (response.authResponse) {
-		   console.log(response);
-		   updateUserInfo(response);
-		 }
-	   }
-
-  (function() {
-	var e = document.createElement('script'); e.async = true;
-		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-		document.getElementById('fb-root').appendChild(e);
-		}());
-</script>
-</div>
 <div data-role="page" >
 		<div data-role="content" role="main">
     	<h1>Facebook Client-side Authentication Example</h1>
@@ -46,15 +19,20 @@
         <div id="auth-loggedout">
           <a href="#" id="auth-loginlink">Login</a>
         </div>
-        
+        <div id="auth-loggedin" style="display:none">
+          Hi, <span id="auth-displayname"></span>  
+        (<a href="#" id="auth-logoutlink">logout</a>)
+      	</div>
     	</div>
         
         <div id="displayCallback">
         <p>Hello <span id="name"></span> <span id="lastname"></span>, you're logged into Facebook!</p>
         <p>Your username is <span id="username"></span>, and you live in <span id="city"></span></p>
         </div>
-	</div>
-		
+	</div><!-- /content -->
+		<!--End Wrapper--> 
 </div>
+<!--End data-role page-->
+<div id="fb-root"></div>
 </body>
 </html>
