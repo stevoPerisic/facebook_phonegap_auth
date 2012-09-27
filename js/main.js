@@ -6,8 +6,12 @@ function loaded() {
 function getFBstuff(){
 	alert('This is the url: ' + localStorage['url']);
 	var token = localStorage['url'];
-	token = token.match(/=(.*?)&/);
-	alert('This is the token: ' + token);
+	token = token.split("&");
+	//token = token.match(/=(.*?)&/);
+	alert('This is the token at 0: ' + token[0]);
+	alert('This is the token at 1: ' + token[1]);
+	alert('This is the token at 2: ' + token[2]);
+	alert('This is the token at 3: ' + token[3]);
 	  
 	var url = 'https://graph.facebook.com/me/?access_token='+token[1];
 	alert(url);  
@@ -31,7 +35,7 @@ function onOnline() {
 		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=401203346613814&&redirect_uri=http://www.facebook.com/connect/login_success.html&state=somestatevalue&response_type=token&display=touch';
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
-    														alert('childBrowser has loaded ' + url);
+    														//alert('childBrowser has loaded ' + url);
 															localStorage["url"] = url;
 														};
 		window.plugins.childBrowser.onClose = function () {
