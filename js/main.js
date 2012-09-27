@@ -13,7 +13,7 @@ function getFBstuff(){
 	alert('This is the token at 2: ' + token[2]);
 	alert('This is the token at 3: ' + token[3]);
 	  
-	var url = 'https://graph.facebook.com/me/?access_token='+token[1];
+	var url = 'https://graph.facebook.com/me/?'+token[1];
 	alert(url);  
 	  $.getJSON(url,function(json){
 			console.log(json);
