@@ -27,7 +27,7 @@ function onOnline() {
 	  $('#auth-loginlink').bind('click', function(){
 		//FB.login();
 		//http://www.facebook.com/dialog/oauth/?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URL&state=YOUR_STATE_VALUE&scope=COMMA_SEPARATED_LIST_OF_PERMISSION_NAMES
-		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=519491361401353&&redirect_uri=http://www.facebook.com/connect/login_success.html&state=somestatevalue&response_type=token&display=touch';
+		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=401203346613814&&redirect_uri=http://www.facebook.com/connect/login_success.html&state=somestatevalue&response_type=token&display=touch';
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
     														console.log('childBrowser has loaded ' + url);
