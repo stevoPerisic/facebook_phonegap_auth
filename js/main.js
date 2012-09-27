@@ -6,7 +6,7 @@ function loaded() {
 function getFBstuff(){
 	var token = localStorage['url'];
 	token = token.match(/=(.*?)&/);
-	console.log(token[1])
+	alert(token[1])
 	  
 	var url = 'https://graph.facebook.com/me/?access_token='+token[1];
 	console.log(url);  
@@ -30,7 +30,7 @@ function onOnline() {
 		var thisurl = 'http://www.facebook.com/dialog/oauth/?client_id=401203346613814&&redirect_uri=http://www.facebook.com/connect/login_success.html&state=somestatevalue&response_type=token&display=touch';
 		window.plugins.childBrowser.showWebPage(thisurl);
 		window.plugins.childBrowser.onLocationChange = function (url) {
-    														console.log('childBrowser has loaded ' + url);
+    														alert('childBrowser has loaded ' + url);
 															localStorage["url"] = url;
 														};
 		window.plugins.childBrowser.onClose = function () {
