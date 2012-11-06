@@ -7,11 +7,6 @@ function getFBstuff(){
 	alert('This is the url: ' + localStorage['url']);
 	var token = localStorage['url'];
 	token = token.split("&");
-	//token = token.match(/=(.*?)&/);
-	//alert('This is the token at 0: ' + token[0]);
-	//alert('This is the token at 1: ' + token[1]);
-	//alert('This is the token at 2: ' + token[2]);
-	//alert('This is the token at 3: ' + token[3]);
 	  
 	var url = 'https://graph.facebook.com/me/?'+token[1];
 	alert(url);  
